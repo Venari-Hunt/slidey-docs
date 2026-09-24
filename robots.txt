@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://venari-hunt.github.io/slidey-docs/sitemap.xml

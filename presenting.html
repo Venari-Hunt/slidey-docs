@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presenting — Slidey</title>
+<meta name="description" content="Preview slides while you write, present full screen, use a USB presentation clicker, speaker notes and step-by-step reveals.">
+<link rel="canonical" href="https://venari-hunt.github.io/slidey-docs/presenting.html">
+<link rel="icon" href="assets/img/favicon.svg">
+<meta property="og:title" content="Presenting — Slidey">
+<meta property="og:description" content="Preview slides while you write, present full screen, use a USB presentation clicker, speaker notes and step-by-step reveals.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.svg" alt="">
+    <span class="brand">Slidey</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="writing.html">Writing slides</a>
+      <a href="slide-menu.html">Slide menu (/)</a>
+      <a href="looks.html">Layouts &amp; styles</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="presenting.html" class="active">Presenting</a>
+      <a href="export.html">Export</a>
+      <a href="settings.html">Settings</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+<h1>Presenting</h1>
+<p class="subtitle">Preview while you write, then present full screen with the keyboard or a USB clicker.</p>
+
+<h2 id="preview">The preview</h2>
+<ul>
+  <li>Open it with the <strong>slides icon</strong> in the left ribbon, or the <strong>Show slide preview</strong> command. It opens beside your note. Change where it opens in <strong>Settings → Slidey → Slide preview mode</strong> (split, tab or sidebar).</li>
+  <li>It updates as you type (<strong>Auto reload</strong> setting) and follows your cursor: click in a slide's text and the preview jumps there.</li>
+  <li>The preview shows the note that was active when you opened it. After switching notes, click the <strong>slides icon</strong> again (or type <code>/preview</code> in the note) to show the new note's slides. The <strong>Show slide preview</strong> command opens and closes the preview.</li>
+</ul>
+
+<h2 id="present">Present mode</h2>
+<p>Run <strong>Present slides (fullscreen)</strong>. The deck fills the screen and hides everything else in Obsidian. Move the mouse to show an <strong>Exit</strong> button in the top-right corner, or press <kbd>Esc</kbd>.</p>
+<p>Tip: give it a hotkey in <strong>Settings → Hotkeys</strong> (search “Present slides”).</p>
+
+<h2 id="keys">Moving through slides</h2>
+<div class="table-scroll">
+<table>
+  <tr><th>Key</th><th>Does</th></tr>
+  <tr><td><kbd>→</kbd> <kbd>Page Down</kbd> <kbd>Space</kbd></td><td>Next slide (or next step)</td></tr>
+  <tr><td><kbd>←</kbd> <kbd>Page Up</kbd></td><td>Previous slide</td></tr>
+  <tr><td><kbd>↓</kbd> <kbd>↑</kbd></td><td>Slides below / above (vertical slides)</td></tr>
+  <tr><td><kbd>S</kbd></td><td>Speaker view: notes, next slide and a timer in a separate window</td></tr>
+  <tr><td><kbd>O</kbd></td><td>Overview of all slides</td></tr>
+  <tr><td><kbd>F</kbd></td><td>Full screen (in the browser)</td></tr>
+</table>
+</div>
+
+<h2 id="clicker">USB presentation clickers</h2>
+<p>Most clickers send <kbd>Page Down</kbd> / <kbd>Page Up</kbd> or the arrow keys, which Slidey understands. You don't have to click the slides first. Slidey passes these keys to the deck even when your note has focus.</p>
+<div class="callout">
+  If your clicker's “blank screen” or “laser” buttons do something odd, that's because they send other keys (often <kbd>B</kbd> or <kbd>.</kbd>). <kbd>B</kbd> blacks out the screen; press it again to come back.
+</div>
+
+<h2 id="notes">Speaker notes</h2>
+<pre><code>## My slide
+Text everyone sees.
+
+%% notes %%
+Only I see this, in the speaker view.</code></pre>
+<p>Everything after <code>%% notes %%</code> on that slide goes to the speaker view (<kbd>S</kbd>), not the slide. In separators mode, a line starting with <code>note:</code> works the same way.</p>
+
+<h2 id="steps">Showing things step by step</h2>
+<pre><code>- First point &lt;!-- element class="fragment" --&gt;
+- Second point &lt;!-- element class="fragment" --&gt;</code></pre>
+<p>Each marked line appears on the next click. In the <a href="slide-menu.html">slide menu</a>, type <code>/step</code> at the end of a line.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Slidey is an independent Obsidian plugin, built on <a href="https://github.com/ebullient/obsidian-slides-extended">Slides Extended</a> (MIT). This guide covers the plugin as it is today and grows with each release.
+  </div>
+</footer>
+</body>
+</html>

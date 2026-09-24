@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pictures — Slidey</title>
+<meta name="description" content="How Slidey fits pictures on slides, puts several side by side, and uses pictures or colors as slide backgrounds.">
+<link rel="canonical" href="https://venari-hunt.github.io/slidey-docs/pictures.html">
+<link rel="icon" href="assets/img/favicon.svg">
+<meta property="og:title" content="Pictures — Slidey">
+<meta property="og:description" content="How Slidey fits pictures on slides, puts several side by side, and uses pictures or colors as slide backgrounds.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.svg" alt="">
+    <span class="brand">Slidey</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="writing.html">Writing slides</a>
+      <a href="slide-menu.html">Slide menu (/)</a>
+      <a href="looks.html">Layouts &amp; styles</a>
+      <a href="pictures.html" class="active">Pictures</a>
+      <a href="presenting.html">Presenting</a>
+      <a href="export.html">Export</a>
+      <a href="settings.html">Settings</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+<h1>Pictures</h1>
+<p class="subtitle">Pictures from your vault work as they do in any note, and they always fit on the slide.</p>
+
+<h2 id="on-a-slide">A picture on a slide</h2>
+<pre><code>## Our new office
+![[office.jpg]]</code></pre>
+<ul>
+  <li>Both <code>![[office.jpg]]</code> and <code>![](office.jpg)</code> work.</li>
+  <li>A big or tall picture shrinks to fit under the heading and keeps its shape. It never runs off the slide.</li>
+  <li>For a picture beside text, use the <code>image-left</code> or <code>image-right</code> <a href="looks.html#layouts">layout</a>. For a picture that fills the slide with text on top, use <code>image-full</code>.</li>
+</ul>
+
+<h2 id="gallery">Several pictures side by side</h2>
+<pre><code>## Before and after
+![[before.jpg]]
+![[after.jpg]]</code></pre>
+<p>Two or more pictures on one slide sit side by side in a row. Text and headings stay above or below the row.</p>
+
+<h2 id="backgrounds">Backgrounds</h2>
+<p>Put a picture or a color behind the whole slide with <code>bg=</code> in a marker:</p>
+<div class="table-scroll">
+<table>
+  <tr><th>Marker</th><th>Result</th></tr>
+  <tr><td><code>%% bg=photo.jpg %%</code></td><td>Picture fills the slide (cropped to fit)</td></tr>
+  <tr><td><code>%% bg=photo.jpg dim=40% %%</code></td><td>Same, darkened by 40% so text on top stays readable</td></tr>
+  <tr><td><code>%% bg=photo.jpg fit=contain %%</code></td><td>Whole picture shown, nothing cropped</td></tr>
+  <tr><td><code>%% bg=#224466 %%</code></td><td>Solid color</td></tr>
+  <tr><td><code>%% bg=[[My photo.png]] %%</code></td><td>A vault link works too, also for names with spaces</td></tr>
+</table>
+</div>
+<p>A web address works as well: <code>%% bg=https://example.com/photo.jpg %%</code>. Type <code>/bg</code> for the <a href="slide-menu.html">slide menu</a> versions.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Slidey is an independent Obsidian plugin, built on <a href="https://github.com/ebullient/obsidian-slides-extended">Slides Extended</a> (MIT). This guide covers the plugin as it is today and grows with each release.
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!-- title: Writing slides | description: The three ways Slidey splits a note into slides: headings, separators and blocks, plus slide markers. -->
+<h1>Writing slides</h1>
+<p class="subtitle">A slide note is an ordinary note with one property that tells Slidey how to split it.</p>
+
+<p>Pick a way with the <code>slides:</code> property at the top of the note. The easiest way to set it is to type <code>/slides</code> in the note (see <a href="slide-menu.html">Slide menu</a>).</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th><code>slides:</code></th><th>What becomes a slide</th><th>Good for</th></tr>
+  <tr><td><code>headings</code></td><td>Every heading starts a slide</td><td>Notes you already write with headings</td></tr>
+  <tr><td><code>separators</code> (or no <code>slides:</code>)</td><td>Each part between <code>---</code> lines</td><td>Classic Markdown slide decks</td></tr>
+  <tr><td><code>blocks</code></td><td>Only the parts you wrap in markers</td><td>A long note where only a few parts go on screen</td></tr>
+</table>
+</div>
+
+<h2 id="headings">Headings mode</h2>
+<pre><code>---
+slides: headings
+---
+# Title of the talk
+
+## First point
+Text for the first point.
+
+## Second point
+- A bullet
+- Another bullet</code></pre>
+<ul>
+  <li>Every heading (<code>#</code> to <code>######</code>) starts a new slide. Any text before the first heading gets its own slide.</li>
+  <li>The heading level can pick a layout and a style automatically: <strong>Settings → Heading levels</strong>. By default a <code>#</code> heading uses the <code>title</code> layout.</li>
+  <li>A <code>---</code> line is just a horizontal line here, not a new slide.</li>
+  <li>To leave a section out of the deck, put <code>%% noslide %%</code> right under its heading.</li>
+</ul>
+
+<h2 id="separators">Separators mode</h2>
+<pre><code>---
+slides: separators
+---
+# First slide
+
+---
+
+# Second slide
+
+--
+
+A slide below the second one (a vertical slide).</code></pre>
+<ul>
+  <li><code>---</code> on its own line starts the next slide.</li>
+  <li><code>--</code> starts a slide <em>below</em> the current one. You reach it with <kbd>↓</kbd>. Use it for optional detail.</li>
+  <li>A note with no <code>slides:</code> property works this way too.</li>
+</ul>
+
+<h2 id="blocks">Blocks mode</h2>
+<pre><code>---
+slides: blocks
+---
+Research notes, links, ideas… none of this is on a slide.
+
+%% slide %%
+# The one slide I'll show
+%% endslide %%
+
+More private notes.
+
+%% slide layout=quote %%
+&gt; A quote for the second slide.
+%% endslide %%</code></pre>
+<ul>
+  <li><code>%% slide %%</code> starts a slide. <code>%% endslide %%</code> ends it. The next <code>%% slide %%</code> or the end of the note also ends it.</li>
+  <li>Everything outside the markers stays out of the deck.</li>
+  <li>You can pick a layout, style or background on the marker line itself: <code>%% slide layout=quote style=paper %%</code>.</li>
+</ul>
+
+<h2 id="markers">Slide markers</h2>
+<p>Lines like <code>%% layout=two-column %%</code> are <strong>slide markers</strong>. Obsidian hides <code>%% … %%</code> text in reading view, so markers never clutter your note. Put them at the <strong>top of a slide</strong>: right under the heading, right after the <code>---</code>, or on the <code>%% slide %%</code> line.</p>
+<div class="table-scroll">
+<table>
+  <tr><th>Marker</th><th>What it does</th></tr>
+  <tr><td><code>%% layout=two-column %%</code></td><td>Where things go on the slide. See <a href="looks.html#layouts">layouts</a>.</td></tr>
+  <tr><td><code>%% style=night %%</code></td><td>Colors and fonts. See <a href="looks.html#styles">styles</a>.</td></tr>
+  <tr><td><code>%% bg=photo.jpg %%</code></td><td>A background picture or color. See <a href="pictures.html#backgrounds">backgrounds</a>.</td></tr>
+  <tr><td><code>%% notes %%</code></td><td>Everything after it on this slide is speaker notes, not shown on the slide.</td></tr>
+  <tr><td><code>%% color=#eee accent=red size=1.4 %%</code></td><td>One-off changes for this slide only. See <a href="looks.html#overrides">one-off changes</a>.</td></tr>
+  <tr><td><code>%% noslide %%</code></td><td>Headings mode: leave this section out.</td></tr>
+</table>
+</div>
+<p>You can combine several on one line: <code>%% layout=image-left style=paper bg=#223344 %%</code>.</p>
+
+<h2 id="dots">Dots and labels in the editor</h2>
+<p>In a slide note, each slide's first line gets a colored dot in the margin and a small label at the end, like <code>two-column · night</code>. They show which layout and style the slide will use, before you look at the preview.</p>
+<ul>
+  <li>A misspelled name shows in red with a question mark: <code>nigth?</code></li>
+  <li><code>plain</code> means no layout or style was picked.</li>
+  <li><code>not a slide</code> (struck through) marks a <code>%% noslide %%</code> section.</li>
+</ul>
+<p>A plain <code>---</code> note gets the dots once its properties include <code>slides</code>, <code>layout</code>, <code>style</code>, <code>preset</code> or <code>theme</code>.</p>
+
+<h2 id="deck-settings">Settings for the whole deck</h2>
+<p>These properties at the top of the note apply to every slide:</p>
+<pre><code>---
+slides: headings
+layout: title
+style: paper
+theme: black
+---</code></pre>
+<p>A marker on one slide always wins over the deck setting.</p>

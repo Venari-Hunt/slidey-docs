@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slidey — Slides from your Obsidian notes</title>
+<meta name="description" content="Slidey turns an Obsidian note into a styled slide deck you can present with a USB clicker and save as a PDF.">
+<link rel="canonical" href="https://venari-hunt.github.io/slidey-docs/">
+<link rel="icon" href="assets/img/favicon.svg">
+<meta property="og:title" content="Slidey — Slides from your Obsidian notes">
+<meta property="og:description" content="Slidey turns an Obsidian note into a styled slide deck you can present with a USB clicker and save as a PDF.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.svg" alt="">
+    <span class="brand">Slidey</span>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="writing.html">Writing slides</a>
+      <a href="slide-menu.html">Slide menu (/)</a>
+      <a href="looks.html">Layouts &amp; styles</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="presenting.html">Presenting</a>
+      <a href="export.html">Export</a>
+      <a href="settings.html">Settings</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+<h1>Slides from your Obsidian notes</h1>
+<p class="subtitle">Write a normal note. Slidey turns it into a styled slide deck you can present with a USB clicker and save as a PDF.</p>
+
+<p>
+  <a class="btn" href="getting-started.html">Get started</a>
+  <a class="btn secondary" href="https://github.com/Venari-Hunt/slidey/releases/latest">Latest release</a>
+</p>
+
+<p>Slidey is a plugin for <a href="https://obsidian.md">Obsidian</a>. You keep writing in Markdown, the way you already do. Slidey shows the slides live next to your note, lets you pick a layout and a look for each slide, and runs the finished deck full screen. A presentation clicker moves through it.</p>
+
+<h2>What it does</h2>
+<div class="feature-grid">
+  <div class="card">
+    <h3><a href="writing.html">Three ways to write</a></h3>
+    <p>Every heading becomes a slide, or <code>---</code> splits slides, or only the parts you mark become slides and the rest of the note stays private.</p>
+  </div>
+  <div class="card">
+    <h3><a href="slide-menu.html">Slide menu</a></h3>
+    <p>Type <code>/</code> in a slide note to add a new slide, a layout, a background picture, speaker notes and more, without remembering any syntax.</p>
+  </div>
+  <div class="card">
+    <h3><a href="looks.html">Layouts and styles</a></h3>
+    <p>8 layouts decide where things go. 5 editable styles decide colors and fonts. Mix any layout with any style.</p>
+  </div>
+  <div class="card">
+    <h3><a href="pictures.html">Pictures that fit</a></h3>
+    <p>Pictures shrink to fit the slide, sit side by side in a row, or fill the background, darkened so text stays readable.</p>
+  </div>
+  <div class="card">
+    <h3><a href="presenting.html">Present with a clicker</a></h3>
+    <p>Full-screen present mode, speaker notes, and USB presentation clickers that just work, even when the note has focus.</p>
+  </div>
+  <div class="card">
+    <h3><a href="export.html">Save as PDF</a></h3>
+    <p>One command saves the deck as a PDF, one page per slide, backgrounds included. HTML export is there too.</p>
+  </div>
+</div>
+
+<h2>A 10-second example</h2>
+<p>This note becomes three slides:</p>
+<pre><code>---
+slides: headings
+style: night
+---
+# My talk
+
+## Why it matters
+%% layout=two-column %%
+- Point one
+- Point two
+
+## Thank you
+%% bg=sunset.jpg dim=40% %%</code></pre>
+<p>The first heading is the title slide. The second shows its bullets in two columns. The third puts a darkened photo behind the text. <a href="getting-started.html">Try it yourself.</a></p>
+
+<div class="callout">
+  <strong>Early days.</strong> Slidey is young and changing fast. See <a href="changelog.html">What's new</a> for each release.
+</div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Slidey is an independent Obsidian plugin, built on <a href="https://github.com/ebullient/obsidian-slides-extended">Slides Extended</a> (MIT). This guide covers the plugin as it is today and grows with each release.
+  </div>
+</footer>
+</body>
+</html>

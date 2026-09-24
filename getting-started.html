@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started — Slidey</title>
+<meta name="description" content="Install Slidey in Obsidian, make your first slide deck, preview it and present it.">
+<link rel="canonical" href="https://venari-hunt.github.io/slidey-docs/getting-started.html">
+<link rel="icon" href="assets/img/favicon.svg">
+<meta property="og:title" content="Getting started — Slidey">
+<meta property="og:description" content="Install Slidey in Obsidian, make your first slide deck, preview it and present it.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.svg" alt="">
+    <span class="brand">Slidey</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html" class="active">Getting started</a>
+      <a href="writing.html">Writing slides</a>
+      <a href="slide-menu.html">Slide menu (/)</a>
+      <a href="looks.html">Layouts &amp; styles</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="presenting.html">Presenting</a>
+      <a href="export.html">Export</a>
+      <a href="settings.html">Settings</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+<h1>Getting started</h1>
+<p class="subtitle">Install Slidey, make a first deck, and present it. About 5 minutes.</p>
+
+<h2 id="install">1. Install Slidey</h2>
+<p>Slidey isn't in Obsidian's community plugin list yet. Install it with <strong>BRAT</strong>, a helper plugin that installs plugins straight from GitHub and keeps them up to date.</p>
+<ol class="steps">
+  <li>In Obsidian, open <strong>Settings → Community plugins</strong>. If Restricted mode is on, turn it off.</li>
+  <li>Click <strong>Browse</strong>, search for <strong>BRAT</strong> (“Obsidian42 - BRAT”), then click <strong>Install</strong> and <strong>Enable</strong>.</li>
+  <li>Open the command palette (<kbd>Ctrl</kbd>+<kbd>P</kbd>) and run <strong>BRAT: Add a beta plugin for testing</strong>.</li>
+  <li>Paste <code>Venari-Hunt/slidey</code> and confirm.</li>
+  <li>Back in <strong>Settings → Community plugins</strong>, make sure <strong>Slidey</strong> is switched on.</li>
+</ol>
+<p>BRAT checks for new Slidey releases when Obsidian starts and installs them for you.</p>
+<div class="callout">
+  The first time Slidey runs, it downloads its slide engine (about 12 MB) from the matching GitHub release. That happens once per version.
+</div>
+
+<h2 id="first-deck">2. Make your first deck</h2>
+<ol class="steps">
+  <li>Create a new note.</li>
+  <li>Type <code>/slides</code> and pick <strong>Make this note slides: every heading is a slide</strong>. This adds <code>slides: headings</code> to the note's properties.</li>
+  <li>Write a few headings with some text under each:
+<pre><code># My first deck
+
+## Hello
+Some text on the second slide.
+
+## Goodbye
+- One point
+- Another point</code></pre></li>
+</ol>
+
+<h2 id="preview">3. Preview it</h2>
+<p>Click the <strong>slides icon</strong> in the left ribbon, or run <strong>Show slide preview</strong> from the command palette (running it again closes the preview). The deck opens beside your note and updates as you type. Moving your cursor in the note jumps the preview to that slide.</p>
+
+<h2 id="present">4. Present it</h2>
+<p>Run <strong>Present slides (fullscreen)</strong>. Use <kbd>→</kbd> / <kbd>←</kbd>, <kbd>Page Down</kbd> / <kbd>Page Up</kbd>, <kbd>Space</kbd>, or your USB clicker to move through the slides. Press <kbd>Esc</kbd> to leave. Give the command a hotkey in <strong>Settings → Hotkeys</strong> if you present often.</p>
+
+<h2 id="next">Where next</h2>
+<ul>
+  <li><a href="writing.html">Writing slides</a>: the three ways to split a note into slides.</li>
+  <li><a href="slide-menu.html">Slide menu</a>: type <code>/</code> to add anything to a slide.</li>
+  <li><a href="looks.html">Layouts &amp; styles</a>: make it look the way you want.</li>
+</ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Slidey is an independent Obsidian plugin, built on <a href="https://github.com/ebullient/obsidian-slides-extended">Slides Extended</a> (MIT). This guide covers the plugin as it is today and grows with each release.
+  </div>
+</footer>
+</body>
+</html>

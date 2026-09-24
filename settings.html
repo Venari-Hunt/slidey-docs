@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings — Slidey</title>
+<meta name="description" content="What each Slidey setting does: preview, slide menu, export folder, looks, heading levels and reveal.js options.">
+<link rel="canonical" href="https://venari-hunt.github.io/slidey-docs/settings.html">
+<link rel="icon" href="assets/img/favicon.svg">
+<meta property="og:title" content="Settings — Slidey">
+<meta property="og:description" content="What each Slidey setting does: preview, slide menu, export folder, looks, heading levels and reveal.js options.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.svg" alt="">
+    <span class="brand">Slidey</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="writing.html">Writing slides</a>
+      <a href="slide-menu.html">Slide menu (/)</a>
+      <a href="looks.html">Layouts &amp; styles</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="presenting.html">Presenting</a>
+      <a href="export.html">Export</a>
+      <a href="settings.html" class="active">Settings</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+<h1>Settings</h1>
+<p class="subtitle">Open <strong>Settings → Slidey</strong>. Most people only need the first few.</p>
+
+<h2 id="everyday">Everyday</h2>
+<div class="table-scroll">
+<table>
+  <tr><th>Setting</th><th>What it does</th></tr>
+  <tr><td>Slide preview mode</td><td>Where the preview opens: split beside the note, a new tab, or the sidebar.</td></tr>
+  <tr><td>Auto reload</td><td>The preview updates as you type.</td></tr>
+  <tr><td>Slide menu (/)</td><td>Turns the <a href="slide-menu.html"><code>/</code> slide menu</a> on or off.</td></tr>
+  <tr><td>Export directory</td><td>Vault folder where PDF and HTML exports go. Default: <code>export</code>.</td></tr>
+  <tr><td>Heading levels</td><td>In headings mode, the layout, style and preset each heading level gets. See <a href="looks.html#heading-levels">Looks by heading level</a>.</td></tr>
+  <tr><td>Slide styles</td><td>Edit the 5 starter styles or add your own, with a live preview. See <a href="looks.html#styles">Styles</a>.</td></tr>
+  <tr><td>Slide presets</td><td>The older all-in-one looks. See <a href="looks.html#presets">Presets</a>.</td></tr>
+</table>
+</div>
+
+<h2 id="deck">Deck defaults</h2>
+<p>These apply to every deck unless its properties say otherwise:</p>
+<ul>
+  <li><strong>Default slide theme</strong> and <strong>Default highlight theme</strong>: the base reveal.js theme and the code highlighting colors.</li>
+  <li><strong>Transition style</strong> and <strong>Transition speed</strong>: how one slide changes to the next.</li>
+  <li><strong>Center content</strong>: center slide content vertically.</li>
+  <li><strong>Controls</strong>, <strong>Progress bar</strong>, <strong>Slide numbers</strong>: on-screen extras.</li>
+  <li><strong>Default horizontal / vertical slide separator</strong>: change <code>---</code> and <code>--</code> for separators mode.</li>
+  <li><strong>Math engine</strong>: KaTeX or MathJax for formulas.</li>
+  <li><strong>Presentation plugins</strong>: chalkboard, elapsed time bar, laser pointer, menu, overview.</li>
+</ul>
+
+<h2 id="server">Preview server</h2>
+<p>The preview runs on a small web server inside Obsidian, on your computer only.</p>
+<ul>
+  <li><strong>Automatically start the preview server</strong>: start it when Obsidian starts.</li>
+  <li><strong>Server port</strong> (default <code>3000</code>) and <strong>Server host</strong>: change the port if another program already uses 3000.</li>
+</ul>
+
+<h2 id="backup">Backup and restore</h2>
+<p><strong>Export settings</strong> saves all Slidey settings, including your styles and presets, to a file. <strong>Import settings</strong> loads them back. Do this before reinstalling the plugin.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Slidey is an independent Obsidian plugin, built on <a href="https://github.com/ebullient/obsidian-slides-extended">Slides Extended</a> (MIT). This guide covers the plugin as it is today and grows with each release.
+  </div>
+</footer>
+</body>
+</html>

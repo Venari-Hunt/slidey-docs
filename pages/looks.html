@@ -1,0 +1,52 @@
+<!-- title: Layouts & styles | description: Slidey's 8 layouts decide where things go on a slide; styles decide colors and fonts. Mix any layout with any style. -->
+<h1>Layouts &amp; styles</h1>
+<p class="subtitle">A <strong>layout</strong> decides where things go on a slide. A <strong>style</strong> decides the colors and fonts. Any layout works with any style.</p>
+
+<pre><code>## My slide
+%% layout=image-left style=paper %%
+![[photo.jpg]]
+Text beside the picture.</code></pre>
+<p>Set them for one slide with a marker (above), or for the whole deck in the note's properties: <code>layout: title</code>, <code>style: night</code>. A slide's marker wins over the deck setting.</p>
+
+<h2 id="layouts">Layouts</h2>
+<p>8 layouts come with Slidey. They never change colors or fonts.</p>
+<div class="table-scroll">
+<table>
+  <tr><th>Name</th><th>What it does</th></tr>
+  <tr><td><code>title</code></td><td>Big centered title, for the opening slide</td></tr>
+  <tr><td><code>section</code></td><td>Section divider between parts of a talk</td></tr>
+  <tr><td><code>two-column</code></td><td>Text and bullets flow into two columns</td></tr>
+  <tr><td><code>image-left</code></td><td>Picture on the left, text on the right</td></tr>
+  <tr><td><code>image-right</code></td><td>Text on the left, picture on the right</td></tr>
+  <tr><td><code>image-full</code></td><td>Picture fills the slide, text on top</td></tr>
+  <tr><td><code>quote</code></td><td>Large quote</td></tr>
+  <tr><td><code>code</code></td><td>Room for a code block</td></tr>
+</table>
+</div>
+
+<h2 id="styles">Styles</h2>
+<p>A style is a set of colors and fonts: background, text color, accent color (headings and links), heading font, body font, text size and alignment. 5 styles come with Slidey: <code>night</code>, <code>paper</code>, <code>clean</code>, <code>bold</code> and <code>ocean</code>.</p>
+<p>Edit them, or add your own, in <strong>Settings → Slidey → Slide styles</strong>. Each style shows a live preview while you edit, and its dot color matches the dots beside your slides in the editor.</p>
+<div class="callout">
+  Fonts must be installed on your computer. If a font doesn't show, check its exact name in your system's font list.
+</div>
+
+<h2 id="overrides">One-off changes</h2>
+<p>To change one slide without making a new style, add any of these to its marker:</p>
+<pre><code>%% font="Open Sans" color=#eeeeee accent=red size=1.4 %%</code></pre>
+<div class="table-scroll">
+<table>
+  <tr><th>Key</th><th>Changes</th><th>Example</th></tr>
+  <tr><td><code>font</code></td><td>Font for headings and text</td><td><code>font="Georgia"</code></td></tr>
+  <tr><td><code>color</code></td><td>Text color</td><td><code>color=#eeeeee</code></td></tr>
+  <tr><td><code>accent</code></td><td>Heading and link color</td><td><code>accent=orange</code></td></tr>
+  <tr><td><code>size</code></td><td>Text size: a number multiplies it, or give a size</td><td><code>size=1.4</code>, <code>size=36px</code></td></tr>
+</table>
+</div>
+<p>These always win over the slide's style.</p>
+
+<h2 id="presets">Presets (older)</h2>
+<p>Before layouts and styles were separate, Slidey had <strong>presets</strong>: a layout and a look in one. They still work (<code>%% preset=quote %%</code> or <code>preset: cover</code>), and you can edit them in <strong>Settings → Slidey → Slide presets</strong>. The 7 presets are <code>cover</code>, <code>section</code>, <code>quote</code>, <code>image-left</code>, <code>bullets</code>, <code>code</code> and <code>image-bg</code>. For new decks, layouts and styles are more flexible.</p>
+
+<h2 id="heading-levels">Looks by heading level</h2>
+<p>In headings mode, <strong>Settings → Slidey → Heading levels</strong> lets each heading level pick a layout, a style and a preset. For example, <code>#</code> gets the <code>title</code> layout and <code>##</code> gets <code>two-column</code>. A marker under a heading still wins.</p>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ &amp; troubleshooting — Slidey</title>
+<meta name="description" content="Answers to common Slidey questions: black preview, updates, fonts, port in use, pictures not showing.">
+<link rel="canonical" href="https://venari-hunt.github.io/slidey-docs/faq.html">
+<link rel="icon" href="assets/img/favicon.svg">
+<meta property="og:title" content="FAQ &amp; troubleshooting — Slidey">
+<meta property="og:description" content="Answers to common Slidey questions: black preview, updates, fonts, port in use, pictures not showing.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.svg" alt="">
+    <span class="brand">Slidey</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="writing.html">Writing slides</a>
+      <a href="slide-menu.html">Slide menu (/)</a>
+      <a href="looks.html">Layouts &amp; styles</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="presenting.html">Presenting</a>
+      <a href="export.html">Export</a>
+      <a href="settings.html">Settings</a>
+      <a href="faq.html" class="active">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+<h1>FAQ &amp; troubleshooting</h1>
+
+<h2 id="black-preview">The preview is black or empty</h2>
+<ol class="steps">
+  <li>Click the <strong>slides icon</strong> in the ribbon to reload the preview for the current note.</li>
+  <li>Run <strong>Stop slide preview server</strong>, then <strong>Start slide preview server</strong>.</li>
+  <li>Still black? Restart Obsidian. Since 0.15.1, a stuck PDF export can no longer cause this, so a restart clears anything left over.</li>
+</ol>
+
+<h2 id="updates">How do I update Slidey?</h2>
+<p>If you installed it with BRAT (see <a href="getting-started.html#install">Getting started</a>), updates arrive by themselves when Obsidian starts. To update right away, run <strong>BRAT: Check for updates to all beta plugins and UPDATE</strong>. Obsidian's own “Check for updates” button doesn't see Slidey, because it isn't in the community plugin list yet.</p>
+
+<h2 id="port">“Unable to start server. Is 3000 already in use?”</h2>
+<p>Another program uses port 3000. Change <strong>Settings → Slidey → Server port</strong> to something else, like <code>3100</code>, then restart Obsidian.</p>
+
+<h2 id="font">My font doesn't show</h2>
+<p>The font must be installed on your computer, and the name must match exactly, including spaces and capitals: <code>font="Open Sans"</code>. Slidey doesn't download fonts from the web.</p>
+
+<h2 id="picture">My picture doesn't show</h2>
+<ul>
+  <li>Check the file name, including its extension (<code>.jpg</code>, <code>.png</code>).</li>
+  <li>For names with spaces, use a link: <code>%% bg=[[My photo.png]] %%</code>.</li>
+  <li>The picture must be in your vault, or be a full web address.</li>
+</ul>
+
+<h2 id="label-red">A slide's label is red with a “?”</h2>
+<p>The layout, style or preset name is misspelled or doesn't exist. Check it against <a href="looks.html">Layouts &amp; styles</a>, or pick it from the <a href="slide-menu.html"><code>/</code> slide menu</a> so it's always spelled right.</p>
+
+<h2 id="slash-conflict">My usual <code>/</code> menu stopped showing</h2>
+<p>In slide notes, a bare <code>/</code> opens the slide menu. Type what you want (<code>/table</code>) and your usual menu comes back when nothing in the slide menu matches. To turn the slide menu off, go to <strong>Settings → Slidey → Slide menu (/)</strong>.</p>
+
+<h2 id="clicker-nothing">My clicker does nothing</h2>
+<ul>
+  <li>Make sure the slide preview (or present mode) is open.</li>
+  <li>Test the keys it sends: open a text note and press the clicker. If it types nothing, check its USB receiver or batteries.</li>
+</ul>
+
+<h2 id="where-bugs">Where do I report a problem?</h2>
+<p>On GitHub: <a href="https://github.com/Venari-Hunt/slidey/issues">Venari-Hunt/slidey issues</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Slidey is an independent Obsidian plugin, built on <a href="https://github.com/ebullient/obsidian-slides-extended">Slides Extended</a> (MIT). This guide covers the plugin as it is today and grows with each release.
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!-- title: What's new | description: Every Slidey release, newest first. -->
+<h1>What's new</h1>
+<p class="subtitle">Every Slidey release, newest first. The 20 most recent are listed here; the full history is in the <a href="https://github.com/Venari-Hunt/slidey/blob/main/CHANGELOG.md">changelog on GitHub</a>.</p>
+
+<section class="release">
+<h2>0.16.1 — 2026-09-24</h2>
+<ul>
+  <li>Fix: picking <strong>Open slide preview</strong> from the <code>/</code> menu closed the preview when it was already open. It now always shows the current note's slides.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.16.0 — 2026-09-24</h2>
+<ul>
+  <li><strong>Type <code>/</code> for a slide menu.</strong> In a slide note, type <code>/</code> to pick from a list: a new slide, a layout, a style, a background picture (plain, darkened, or whole), speaker notes, text color, font and size, step-by-step bullets, and more. Keep typing to filter (<code>/two</code>, <code>/bg</code>). The menu also opens the preview, starts presenting, or saves a PDF.</li>
+  <li><strong>Turn any note into slides with <code>/slides</code>.</strong> In a note that isn't slides yet, type <code>/slides</code> and pick how it should be split.</li>
+  <li>Works alongside Slash Commander: when nothing in the slide menu matches what you type (like <code>/table</code>), your usual <code>/</code> menu shows instead. You can turn the slide menu off in Settings → Slide menu (/).</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.15.1 — 2026-09-24</h2>
+<ul>
+  <li><strong>Fixed: the slide preview could go black and stay black.</strong> If a PDF export got stuck, its hidden window kept running and blocked every preview until Obsidian restarted. Each export step now has a 30-second limit, the hidden window always closes afterward, and any stuck window left from an earlier export closes when Slidey starts.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.15.0 — 2026-09-24</h2>
+<ul>
+  <li><strong>Save your slides as a PDF in one step.</strong> Run <strong>Export active presentation as PDF</strong> from the command palette (or the preview pane's <code>⋯</code> menu → Export as PDF). Slidey saves one page per slide, with backgrounds, styles and layouts, to the <code>export</code> folder in your vault as <code>&lt;note name&gt;.pdf</code>, then opens it. No browser print dialog, no margin or background settings to fix.</li>
+  <li>The old <strong>Print active presentation</strong> still opens the print view in your browser, if you prefer printing by hand.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.14.0 — 2026-09-24</h2>
+<ul>
+  <li><strong>Pictures always fit on the slide.</strong> A big or tall picture under a heading used to run off the bottom; now it shrinks to fit, keeping its shape.</li>
+  <li><strong>Several pictures on one slide sit side by side</strong> in a row, instead of stacking off the slide. Text and headings stay above or below the row. Layouts like <code>image-left</code> keep their own arrangement.</li>
+  <li><strong>Background pictures can be fitted and dimmed.</strong> Next to <code>bg=</code>, add <code>fit=contain</code> to show the whole picture instead of filling the slide (<code>cover</code>, the default, fills and crops), and <code>dim=40%</code> to darken it so text on top stays readable: <code>%% bg=photo.jpg fit=contain dim=40% %%</code>. Works in all three modes.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.13.0 — 2026-09-24</h2>
+<ul>
+  <li><strong>The colored labels beside your slides now show layout and style.</strong> The pill at the end of a slide's line reads like <code>two-column · night</code>, and the dot takes the style's color. A misspelled name shows up red with a <code>?</code> (<code>nigth?</code>).</li>
+  <li><strong>Plain <code>---</code> notes get the labels too</strong>, on the first line of each slide, once the note's properties include <code>theme:</code>, <code>style:</code>, <code>layout:</code>, <code>preset:</code> or <code>slides:</code>. Before, only headings and blocks notes had them.</li>
+  <li><code>preset=</code> keeps working as before, alone or next to <code>layout=</code> / <code>style=</code>.</li>
+  <li>Settings → Slide styles shows each style's dot color, like Slide presets does.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.12.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>One-off changes on a single slide.</strong> Change one slide without making a new style: put <code>%% font="Open Sans" color=#eeeeee accent=red size=1.4 %%</code> at the top of a slide. <code>font</code> sets the font for headings and text, <code>color</code> the text color, <code>accent</code> the heading and link color, <code>size</code> the text size (<code>1.4</code> = 1.4 times bigger, or <code>36px</code>). These always win over the slide's style and preset. Works in all three modes and on the same line as <code>layout=</code> / <code>style=</code>.</li>
+  <li>Fix: a style's or preset's text size (like the quote preset's) had no effect on the slide itself, only on the settings preview. It now really enlarges the text.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.11.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Slide layouts: where things go on a slide, apart from its look.</strong> Eight layouts ship with the plugin: <code>title</code>, <code>section</code>, <code>two-column</code>, <code>image-left</code>, <code>image-right</code>, <code>image-full</code> (picture fills the slide, text on top), <code>quote</code>, <code>code</code>. Pick one with <code>%% layout=two-column %%</code> at the top of a slide, or <code>layout: title</code> in the note's properties for the whole deck. Combine it with a style: <code>%% layout=image-left style=paper %%</code>. Layouts never change colors or fonts, so any layout works with any style.</li>
+  <li><strong>Heading levels pick a layout and a style too.</strong> Settings → Heading levels now has three dropdowns per level: layout, style and preset. New installs start with <code>#</code> → <code>title</code> layout.</li>
+  <li>Fix: a font name was put in quotes whenever it contained the letter "s", not only when it had a space. Harmless, but now correct.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.10.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Slide styles: the look of a slide, apart from its layout.</strong> A style is a set of colors and fonts: background, text color, accent color, heading font, body font, text size, alignment. Put <code>style: paper</code> in a note's properties to style the whole deck, or <code>%% style=night %%</code> at the top of one slide (headings and blocks mode too). It combines with a preset: <code>%% preset=cover style=bold %%</code> takes the preset's layout and the style's look. Five starters (night, paper, clean, bold, ocean) live in Settings → Slide styles, where you can edit them, add your own, and see a live preview of each. Fonts must be installed on your computer.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.9.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Slide markers in ordinary <code>---</code> notes.</strong> The same <code>%% … %%</code> lines that headings and blocks mode use now work in a plain note split by <code>---</code>: put them at the top of a slide, e.g. <code>%% preset=quote bg=#224466 %%</code>, to pick its preset and background. A <code>%% notes %%</code> line starts the slide's speaker notes. Markers further down a slide are left alone. First step of splitting presets into layouts and styles.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.8.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Speaker notes and slide backgrounds in headings and blocks mode.</strong> A <code>%% notes %%</code> line starts the slide's speaker notes: everything after it, up to the next slide, is shown in the speaker view (press <code>S</code>), not on the slide. <code>%% bg=photo.jpg %%</code> under a heading (or <code>%% slide bg=photo.jpg %%</code> in blocks mode) puts a picture from your vault behind the slide. <code>[[Photo name.png]]</code>, a web address, or a color like <code>#224466</code> also work. Combine with a preset: <code>%% preset=quote bg=#224466 %%</code>. In these two modes a line that happens to start with <code>note:</code> no longer starts notes by accident.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.7.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Blocks mode</strong> — put <code>slides: blocks</code> in a note's properties and keep writing a normal note. Only the parts you wrap become slides: a <code>%% slide %%</code> line starts one, <code>%% endslide %%</code> ends it (or the next <code>%% slide %%</code>, or the end of the note). <code>%% slide preset=quote %%</code> picks the preset. Everything else — research, outline, notes — stays out of the deck. Marker lines get the same colored dot and preset pill as headings. The preview follows the cursor. A note with no slides yet shows a short hint slide.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.6.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Preset pill on each heading</strong> — in <code>slides: headings</code> notes, every heading line ends with a small label naming the preset that slide will use, in the same color as its gutter dot. <code>no preset</code>, <code>name?</code> (red, dashed: preset doesn't exist) and a struck-through <code>not a slide</code> (<code>%% noslide %%</code>) cover the other cases. Editor only; reading view and the deck are unchanged.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.5.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Preset dots in the editor</strong> — in <code>slides: headings</code> notes, a colored dot sits in the gutter beside every heading, showing which preset that slide will use (hover for the name). A hollow ring = no preset, a dashed red ring = a preset name that doesn't exist, a short dash = <code>%% noslide %%</code>. Settings → Slide presets shows the same dot next to each preset as the color legend. Notes without <code>slides: headings</code> show no gutter.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.4.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Headings mode</strong> — put <code>slides: headings</code> in a note's frontmatter and write a normal note: every heading starts a slide, and the heading level picks the preset (Settings → Heading levels; <code>#</code> → <code>cover</code> by default). <code>%% preset=quote %%</code> under a heading picks any other preset for that slide; <code>%% noslide %%</code> leaves a section out. <code>---</code> stays an ordinary horizontal rule. Notes without the key work exactly as before. The preview follows the editor cursor in both modes.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.3.2 — 2026-09-23</h2>
+<ul>
+  <li><strong>Preset auto-upgrades now tell you</strong> — when Slidey swaps an unedited starter preset for its newer version on load, a notice names which preset(s) changed. Edited presets are still never touched.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.3.1 — 2026-09-23</h2>
+<ul>
+  <li><strong><code>image-left</code> preset fixed</strong> — the image now actually sits in a left column (≈42% wide, full slide height, never cropped) with the heading, text and bullets stacked in the right column. The old CSS targeted the <code>&lt;section&gt;</code>, but Slidey renders slide content inside a full-size wrapper <code>&lt;div&gt;</code>, so the layout never applied. The new rule lays out whichever element directly holds the image (also handles an image wrapped alone in a <code>&lt;p&gt;</code>). Works for both <code>![](img)</code> and <code>![[img]]</code>.</li>
+  <li><strong>Existing settings are upgraded automatically</strong> — if your saved <code>image-left</code> still has the old starter CSS (unedited), it is replaced on load. If you edited it, it's left alone.</li>
+  <li>The preview swatch now stays 16:9 even when a preset sets <code>height:100%</code>.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.3.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Preset preview swatches</strong> — Settings → Slide presets now shows a miniature sample slide above each preset, styled by the exact CSS the deck uses (<code>buildPresetCss</code> gained a selector override). It updates live as you edit the fields or custom CSS. Presets whose CSS styles images get a placeholder picture. Unset fields show the default black theme. Verified live over CDP for all 7 starters.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.2.0 — 2026-09-23</h2>
+<ul>
+  <li><strong>Present mode</strong> — a "Present slides (fullscreen)" command (bind it a hotkey in Settings → Hotkeys) puts the deck into true fullscreen, hiding all Obsidian chrome. Moving the mouse fades in a small "Exit presentation" button (top-right); it fades back out after 2s idle, or press Escape. Exiting returns the pane to its normal split/tab/sidebar layout — nothing is torn down. Confirmed working live.</li>
+  <li><strong>Slide presets</strong> — a named look a slide opts into with <code>preset: &lt;name&gt;</code> in the note frontmatter (deck default) or <code>&lt;!-- slide preset="quote" --&gt;</code> per slide (<code>preset: none</code> opts a slide out). Ships 7 starters: <code>cover</code>, <code>section</code>, <code>quote</code>, <code>image-left</code>, <code>bullets</code>, <code>code</code>, <code>image-bg</code> (full-bleed). Each preset has structured fields — background, text/accent color, font scale, alignment — plus a raw-CSS escape hatch (<code>&amp;</code> = the slide selector); all editable in Settings → Slide presets. Verified live.</li>
+  <li><strong>Presentation-clicker robustness</strong> — the preview view now grabs keyboard focus for the deck iframe on load and on any click in the pane, and forwards PageUp/PageDown/arrows/Space to reveal.js over <code>postMessage</code> when focus is on the Obsidian chrome instead of the slides. A physical clicker (or the arrow keys) now drives the deck without having to click the slides first. Verified live: every nav key navigates correctly, including through vertical slide stacks.</li>
+  <li>First release to exercise the reworked <code>release.yml</code> end to end (0.1.0 was cut locally).</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.1.0 — 2026-09-07</h2>
+<ul>
+  <li>Hard-forked into <code>joaovenari/slidey</code>. Rebranded: plugin id/name → <code>slidey</code>, version reset to <code>0.1.0</code>, plugin directory → <code>plugins/slidey/</code>, runtime distribution-zip download → this repo's releases (<code>slidey.zip</code>), user-facing strings → "Slidey". <code>LICENSE</code> keeps both upstream copyright lines plus ours.</li>
+  <li>Dropped the <code>docs</code> submodule; flattened <code>reveal-dist</code> from a submodule to a plain directory. Normalized all line endings to LF (<code>.gitattributes</code>).</li>
+  <li>Added <code>scripts/sync-reveal-assets.mjs</code> + <code>scripts/dev.mjs</code> and <code>pnpm dev:vault</code> / <code>pnpm reveal:build</code> — one-command dev loop that assembles a complete plugin folder into <code>se-test-vault/</code> (no GitHub release needed for local dev).</li>
+  <li>Reworked <code>release.yml</code> and <code>build.yml</code> for the flattened repo (no submodules); <code>codeql.yml</code> de-referenced the removed <code>reveal-dist</code> branch.</li>
+  <li>Build verified: <code>reveal-dist</code> build + 57 tests; plugin build + 138 tests / 90 snapshots; Biome clean.</li>
+  <li><strong>Smoke-tested live in Obsidian</strong> (over CDP): loads clean, renders the test deck (black theme, syntax highlighting, KaTeX, controls, progress bar), and all presentation-clicker keys — PageDown, PageUp, Space, ArrowRight/Left/Down — navigate correctly, including into and out of vertical slide stacks.</li>
+  <li>Research pass on existing markdown-to-slides tools and Obsidian slide plugins (see Claude memory <code>slidey-research-markdown-slides</code>).</li>
+</ul>
+</section>

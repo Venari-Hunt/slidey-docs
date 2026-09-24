@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slide menu (/) — Slidey</title>
+<meta name="description" content="Type / in a Slidey note to add a new slide, a layout, a style, a background picture, speaker notes and more.">
+<link rel="canonical" href="https://venari-hunt.github.io/slidey-docs/slide-menu.html">
+<link rel="icon" href="assets/img/favicon.svg">
+<meta property="og:title" content="Slide menu (/) — Slidey">
+<meta property="og:description" content="Type / in a Slidey note to add a new slide, a layout, a style, a background picture, speaker notes and more.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <img class="logo" src="assets/img/favicon.svg" alt="">
+    <span class="brand">Slidey</span>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="getting-started.html">Getting started</a>
+      <a href="writing.html">Writing slides</a>
+      <a href="slide-menu.html" class="active">Slide menu (/)</a>
+      <a href="looks.html">Layouts &amp; styles</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="presenting.html">Presenting</a>
+      <a href="export.html">Export</a>
+      <a href="settings.html">Settings</a>
+      <a href="faq.html">FAQ</a>
+      <a href="changelog.html">What's new</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+<h1>Slide menu (<code>/</code>)</h1>
+<p class="subtitle">Type <code>/</code> in a slide note to add anything to a slide, without remembering the syntax.</p>
+
+<h2 id="use">How to use it</h2>
+<ol class="steps">
+  <li>On an empty line (or after a space), type <code>/</code>. A list of slide actions opens.</li>
+  <li>Keep typing to narrow it down: <code>/two</code> finds the two-column layout, <code>/bg</code> finds the background options, <code>/notes</code> finds speaker notes.</li>
+  <li>Press <kbd>Enter</kbd> (or click) to insert it. The cursor lands where you type next. After <code>/bg</code>, for example, you type the picture's file name.</li>
+</ol>
+
+<h2 id="items">What's in the menu</h2>
+<div class="table-scroll">
+<table>
+  <tr><th>Item</th><th>Inserts</th></tr>
+  <tr><td>New slide</td><td><code>## </code> (headings), <code>---</code> (separators) or <code>%% slide %%</code> … <code>%% endslide %%</code> (blocks)</td></tr>
+  <tr><td>New slide below (vertical)</td><td><code>--</code> (separators mode only)</td></tr>
+  <tr><td>Leave this section out</td><td><code>%% noslide %%</code> (headings mode only)</td></tr>
+  <tr><td>Layout: …</td><td><code>%% layout=two-column %%</code> and the other 7 layouts</td></tr>
+  <tr><td>Style: …</td><td><code>%% style=night %%</code>, one per style in your settings</td></tr>
+  <tr><td>Background picture</td><td><code>%% bg= %%</code>, plus darkened (<code>dim=40%</code>) and whole-picture (<code>fit=contain</code>) versions</td></tr>
+  <tr><td>Background color</td><td><code>%% bg=# %%</code></td></tr>
+  <tr><td>Speaker notes</td><td><code>%% notes %%</code></td></tr>
+  <tr><td>Text color, Accent color, Font, Text size</td><td><code>%% color= %%</code>, <code>%% accent= %%</code>, <code>%% font="" %%</code>, <code>%% size= %%</code></td></tr>
+  <tr><td>Show step by step</td><td><code>&lt;!-- element class="fragment" --&gt;</code>: that line appears on the next click</td></tr>
+  <tr><td>Preset: …</td><td><code>%% preset=quote %%</code> (older all-in-one looks)</td></tr>
+  <tr><td>Open slide preview, Present full screen, Export as PDF</td><td>Runs the command</td></tr>
+</table>
+</div>
+
+<h2 id="other-notes">In notes that aren't slides yet</h2>
+<p>In an ordinary note, type <code>/slides</code> to turn it into a slide note. Pick one of the three <a href="writing.html">ways to split it</a>. Slidey sets the <code>slides:</code> property for you.</p>
+
+<h2 id="other-menus">With other <code>/</code> menus</h2>
+<p>If you also use <strong>Slash Commander</strong> or Obsidian's own slash commands, both keep working:</p>
+<ul>
+  <li>In ordinary notes, a bare <code>/</code> opens your usual menu. Slidey only shows up after <code>/sl…</code>.</li>
+  <li>In slide notes, a bare <code>/</code> opens the slide menu. When nothing in it matches what you type (for example <code>/table</code>), your usual menu shows instead.</li>
+</ul>
+<p>To turn the slide menu off, go to <strong>Settings → Slidey → Slide menu (/)</strong>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Slidey is an independent Obsidian plugin, built on <a href="https://github.com/ebullient/obsidian-slides-extended">Slides Extended</a> (MIT). This guide covers the plugin as it is today and grows with each release.
+  </div>
+</footer>
+</body>
+</html>
