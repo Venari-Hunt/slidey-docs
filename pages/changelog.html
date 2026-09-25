@@ -3,6 +3,22 @@
 <p class="subtitle">Every Slidey release, newest first. The 20 most recent are listed here; the full history is in the <a href="https://github.com/Venari-Hunt/slidey/blob/main/CHANGELOG.md">changelog on GitHub</a>.</p>
 
 <section class="release">
+<h2>0.21.0 — 2026-09-25</h2>
+<ul>
+  <li><strong>Save your slides as a PowerPoint file.</strong> Run <strong>Export active presentation as PowerPoint (.pptx)</strong>, use the preview's <code>⋯</code> menu → <strong>Export as PowerPoint</strong>, or type <code>/powerpoint</code> in a slide note. Slidey saves <code>export/&lt;note name&gt;.pptx</code> and opens it. Each slide is a sharp picture of the slide exactly as Slidey shows it, and your speaker notes go into PowerPoint's notes. Because each slide is a picture, the text can't be edited in PowerPoint.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.20.0 — 2026-09-25</h2>
+<ul>
+  <li><strong>Present with a speaker view on two screens.</strong> Run <strong>Present with speaker view (two screens)</strong>, type <code>/speaker</code> in a slide note, or press <strong>S</strong> in the preview. The slides open in their own window. With a second screen (a projector) connected, that window moves there and goes full screen by itself. Your screen shows the speaker view: the current slide, the next slide, your speaker notes (<code>%% notes %%</code>), a timer, the time of day, and Previous / Next / End buttons. Your clicker works from either window, and both stay on the same slide. Press <strong>Esc</strong> on the slides, or <strong>End</strong>, to finish.</li>
+  <li>Fix: pressing <strong>S</strong> for reveal.js's speaker notes did nothing in Obsidian, because Obsidian blocks the popup window it needs. S now opens the Slidey speaker view.</li>
+  <li>Turning Slidey off now also closes a presentation window that's still open.</li>
+</ul>
+</section>
+
+<section class="release">
 <h2>0.19.0 — 2026-09-25</h2>
 <ul>
   <li><strong>Slide overview panel.</strong> Run <strong>Show slide overview</strong> (or type <code>/overview</code> in a slide note) to open a panel in the right sidebar with a small picture of every slide in the deck. Click a picture to jump to that slide in your note; the preview follows. As you move through the note, the slide you're on gets an orange outline. The pictures update a moment after you stop typing, and switch when you open another slide note.</li>
@@ -138,21 +154,5 @@
 <h2>0.4.0 — 2026-09-23</h2>
 <ul>
   <li><strong>Headings mode</strong> — put <code>slides: headings</code> in a note's frontmatter and write a normal note: every heading starts a slide, and the heading level picks the preset (Settings → Heading levels; <code>#</code> → <code>cover</code> by default). <code>%% preset=quote %%</code> under a heading picks any other preset for that slide; <code>%% noslide %%</code> leaves a section out. <code>---</code> stays an ordinary horizontal rule. Notes without the key work exactly as before. The preview follows the editor cursor in both modes.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.3.2 — 2026-09-23</h2>
-<ul>
-  <li><strong>Preset auto-upgrades now tell you</strong> — when Slidey swaps an unedited starter preset for its newer version on load, a notice names which preset(s) changed. Edited presets are still never touched.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.3.1 — 2026-09-23</h2>
-<ul>
-  <li><strong><code>image-left</code> preset fixed</strong> — the image now actually sits in a left column (≈42% wide, full slide height, never cropped) with the heading, text and bullets stacked in the right column. The old CSS targeted the <code>&lt;section&gt;</code>, but Slidey renders slide content inside a full-size wrapper <code>&lt;div&gt;</code>, so the layout never applied. The new rule lays out whichever element directly holds the image (also handles an image wrapped alone in a <code>&lt;p&gt;</code>). Works for both <code>![](img)</code> and <code>![[img]]</code>.</li>
-  <li><strong>Existing settings are upgraded automatically</strong> — if your saved <code>image-left</code> still has the old starter CSS (unedited), it is replaced on load. If you edited it, it's left alone.</li>
-  <li>The preview swatch now stays 16:9 even when a preset sets <code>height:100%</code>.</li>
 </ul>
 </section>

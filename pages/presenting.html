@@ -16,6 +16,16 @@
 <p>Run <strong>Present slides (fullscreen)</strong>. The deck fills the screen and hides everything else in Obsidian. Move the mouse to show an <strong>Exit</strong> button in the top-right corner, or press <kbd>Esc</kbd>.</p>
 <p>Tip: give it a hotkey in <strong>Settings → Hotkeys</strong> (search “Present slides”).</p>
 
+<h2 id="speaker">Two screens: speaker view</h2>
+<p>With a projector or second screen connected, run <strong>Present with speaker view (two screens)</strong>, type <code>/speaker</code> in a slide note, or press <kbd>S</kbd> in the preview.</p>
+<ul>
+  <li>The slides open in their own window, move to the second screen and go full screen by themselves.</li>
+  <li>Your screen shows the <strong>speaker view</strong>: the current slide, the next slide, your speaker notes, a timer and the time of day.</li>
+  <li>Your clicker works from either window. Both stay on the same slide.</li>
+  <li>Press <kbd>Esc</kbd> on the slides, or click <strong>End</strong> in the speaker view, to finish.</li>
+</ul>
+<p>With only one screen, the slides open in a normal window you can drag to the projector yourself.</p>
+
 <h2 id="keys">Moving through slides</h2>
 <div class="table-scroll">
 <table>
@@ -23,7 +33,7 @@
   <tr><td><kbd>→</kbd> <kbd>Page Down</kbd> <kbd>Space</kbd></td><td>Next slide (or next step)</td></tr>
   <tr><td><kbd>←</kbd> <kbd>Page Up</kbd></td><td>Previous slide</td></tr>
   <tr><td><kbd>↓</kbd> <kbd>↑</kbd></td><td>Slides below / above (vertical slides)</td></tr>
-  <tr><td><kbd>S</kbd></td><td>Speaker view: notes, next slide and a timer in a separate window</td></tr>
+  <tr><td><kbd>S</kbd></td><td>Speaker view (see <a href="#speaker">Two screens</a>)</td></tr>
   <tr><td><kbd>O</kbd></td><td>Overview of all slides</td></tr>
   <tr><td><kbd>F</kbd></td><td>Full screen (in the browser)</td></tr>
 </table>
@@ -41,7 +51,7 @@ Text everyone sees.
 
 %% notes %%
 Only I see this, in the speaker view.</code></pre>
-<p>Everything after <code>%% notes %%</code> on that slide goes to the speaker view (<kbd>S</kbd>), not the slide. In separators mode, a line starting with <code>note:</code> works the same way.</p>
+<p>Everything after <code>%% notes %%</code> on that slide goes to the <a href="#speaker">speaker view</a>, not the slide. In separators mode, a line starting with <code>note:</code> works the same way.</p>
 
 <h2 id="steps">Showing things step by step</h2>
 <pre><code>- First point &lt;!-- element class="fragment" --&gt;
