@@ -3,6 +3,13 @@
 <p class="subtitle">Every Slidey release, newest first. The 20 most recent are listed here; the full history is in the <a href="https://github.com/Venari-Hunt/slidey/blob/main/CHANGELOG.md">changelog on GitHub</a>.</p>
 
 <section class="release">
+<h2>0.21.1 — 2026-09-25</h2>
+<ul>
+  <li>Behind the scenes: code cleanup so Slidey passes the checks Obsidian runs before listing a plugin in its directory. Nothing changes in how you use it. The sample slides in <strong>Settings → Slide styles / Slide presets</strong> still show each look's colors and fonts.</li>
+</ul>
+</section>
+
+<section class="release">
 <h2>0.21.0 — 2026-09-25</h2>
 <ul>
   <li><strong>Save your slides as a PowerPoint file.</strong> Run <strong>Export active presentation as PowerPoint (.pptx)</strong>, use the preview's <code>⋯</code> menu → <strong>Export as PowerPoint</strong>, or type <code>/powerpoint</code> in a slide note. Slidey saves <code>export/&lt;note name&gt;.pptx</code> and opens it. Each slide is a sharp picture of the slide exactly as Slidey shows it, and your speaker notes go into PowerPoint's notes. Because each slide is a picture, the text can't be edited in PowerPoint.</li>
@@ -147,12 +154,5 @@
 <h2>0.5.0 — 2026-09-23</h2>
 <ul>
   <li><strong>Preset dots in the editor</strong> — in <code>slides: headings</code> notes, a colored dot sits in the gutter beside every heading, showing which preset that slide will use (hover for the name). A hollow ring = no preset, a dashed red ring = a preset name that doesn't exist, a short dash = <code>%% noslide %%</code>. Settings → Slide presets shows the same dot next to each preset as the color legend. Notes without <code>slides: headings</code> show no gutter.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.4.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Headings mode</strong> — put <code>slides: headings</code> in a note's frontmatter and write a normal note: every heading starts a slide, and the heading level picks the preset (Settings → Heading levels; <code>#</code> → <code>cover</code> by default). <code>%% preset=quote %%</code> under a heading picks any other preset for that slide; <code>%% noslide %%</code> leaves a section out. <code>---</code> stays an ordinary horizontal rule. Notes without the key work exactly as before. The preview follows the editor cursor in both modes.</li>
 </ul>
 </section>
