@@ -45,6 +45,10 @@ Text beside the picture.</code></pre>
 </div>
 <p>These always win over the slide's style.</p>
 
+<h2 id="fit">Text that fits</h2>
+<p>When a slide has more text than fits, like a long list or a big paragraph, Slidey makes that slide's text smaller until nothing runs off the bottom or the right edge. It never goes below half size, and slides that fit keep their normal size. PDF exports get the same result.</p>
+<p>To turn it off, go to <strong>Settings → Slidey → Shrink text to fit</strong>, or add <code>fitText: false</code> to one deck's properties. If a slide ends up very small, split it into two slides.</p>
+
 <h2 id="presets">Presets (older)</h2>
 <p>Before layouts and styles were separate, Slidey had <strong>presets</strong>: a layout and a look in one. They still work (<code>%% preset=quote %%</code> or <code>preset: cover</code>), and you can edit them in <strong>Settings → Slidey → Slide presets</strong>. The 7 presets are <code>cover</code>, <code>section</code>, <code>quote</code>, <code>image-left</code>, <code>bullets</code>, <code>code</code> and <code>image-bg</code>. For new decks, layouts and styles are more flexible.</p>
 

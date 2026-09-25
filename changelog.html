@@ -39,6 +39,29 @@
 <p class="subtitle">Every Slidey release, newest first. The 20 most recent are listed here; the full history is in the <a href="https://github.com/Venari-Hunt/slidey/blob/main/CHANGELOG.md">changelog on GitHub</a>.</p>
 
 <section class="release">
+<h2>0.19.0 — 2026-09-25</h2>
+<ul>
+  <li><strong>Slide overview panel.</strong> Run <strong>Show slide overview</strong> (or type <code>/overview</code> in a slide note) to open a panel in the right sidebar with a small picture of every slide in the deck. Click a picture to jump to that slide in your note; the preview follows. As you move through the note, the slide you're on gets an orange outline. The pictures update a moment after you stop typing, and switch when you open another slide note.</li>
+  <li>Fix: in print layout the deck page opened the print dialog by itself. It still does for <strong>Print presentation</strong>, but no longer for the overview panel.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.18.0 — 2026-09-25</h2>
+<ul>
+  <li><strong>Pick background pictures from a list.</strong> In a slide marker, type <code>bg=</code> and a list of the pictures in your vault opens. Pictures next to your note come first, then the newest. Keep typing to narrow it down, and press Enter to insert the name. Slidey writes it so it always finds that exact picture: the short name when it's unique, the full path when another picture shares the name, wrapped in <code>[[ ]]</code> when it has spaces. Colors (<code>bg=#…</code>) are left alone.</li>
+  <li>The <code>/</code> menu's <strong>Background picture</strong> items open that list right away.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.17.0 — 2026-09-25</h2>
+<ul>
+  <li><strong>Text shrinks to fit the slide.</strong> When a slide has more text than fits, like a long list or a big paragraph, Slidey makes that slide's text smaller until nothing runs off the bottom or the right edge. It never goes below half size. Slides that already fit keep their normal size, and the PDF export gets the same result. It's on by default: turn it off in Settings → Shrink text to fit, or for one deck with <code>fitText: false</code> in the note's properties.</li>
+</ul>
+</section>
+
+<section class="release">
 <h2>0.16.1 — 2026-09-24</h2>
 <ul>
   <li>Fix: picking <strong>Open slide preview</strong> from the <code>/</code> menu closed the preview when it was already open. It now always shows the current note's slides.</li>
@@ -167,36 +190,6 @@
   <li><strong><code>image-left</code> preset fixed</strong> — the image now actually sits in a left column (≈42% wide, full slide height, never cropped) with the heading, text and bullets stacked in the right column. The old CSS targeted the <code>&lt;section&gt;</code>, but Slidey renders slide content inside a full-size wrapper <code>&lt;div&gt;</code>, so the layout never applied. The new rule lays out whichever element directly holds the image (also handles an image wrapped alone in a <code>&lt;p&gt;</code>). Works for both <code>![](img)</code> and <code>![[img]]</code>.</li>
   <li><strong>Existing settings are upgraded automatically</strong> — if your saved <code>image-left</code> still has the old starter CSS (unedited), it is replaced on load. If you edited it, it's left alone.</li>
   <li>The preview swatch now stays 16:9 even when a preset sets <code>height:100%</code>.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.3.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Preset preview swatches</strong> — Settings → Slide presets now shows a miniature sample slide above each preset, styled by the exact CSS the deck uses (<code>buildPresetCss</code> gained a selector override). It updates live as you edit the fields or custom CSS. Presets whose CSS styles images get a placeholder picture. Unset fields show the default black theme. Verified live over CDP for all 7 starters.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.2.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Present mode</strong> — a "Present slides (fullscreen)" command (bind it a hotkey in Settings → Hotkeys) puts the deck into true fullscreen, hiding all Obsidian chrome. Moving the mouse fades in a small "Exit presentation" button (top-right); it fades back out after 2s idle, or press Escape. Exiting returns the pane to its normal split/tab/sidebar layout — nothing is torn down. Confirmed working live.</li>
-  <li><strong>Slide presets</strong> — a named look a slide opts into with <code>preset: &lt;name&gt;</code> in the note frontmatter (deck default) or <code>&lt;!-- slide preset="quote" --&gt;</code> per slide (<code>preset: none</code> opts a slide out). Ships 7 starters: <code>cover</code>, <code>section</code>, <code>quote</code>, <code>image-left</code>, <code>bullets</code>, <code>code</code>, <code>image-bg</code> (full-bleed). Each preset has structured fields — background, text/accent color, font scale, alignment — plus a raw-CSS escape hatch (<code>&amp;</code> = the slide selector); all editable in Settings → Slide presets. Verified live.</li>
-  <li><strong>Presentation-clicker robustness</strong> — the preview view now grabs keyboard focus for the deck iframe on load and on any click in the pane, and forwards PageUp/PageDown/arrows/Space to reveal.js over <code>postMessage</code> when focus is on the Obsidian chrome instead of the slides. A physical clicker (or the arrow keys) now drives the deck without having to click the slides first. Verified live: every nav key navigates correctly, including through vertical slide stacks.</li>
-  <li>First release to exercise the reworked <code>release.yml</code> end to end (0.1.0 was cut locally).</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.1.0 — 2026-09-07</h2>
-<ul>
-  <li>Hard-forked into <code>joaovenari/slidey</code>. Rebranded: plugin id/name → <code>slidey</code>, version reset to <code>0.1.0</code>, plugin directory → <code>plugins/slidey/</code>, runtime distribution-zip download → this repo's releases (<code>slidey.zip</code>), user-facing strings → "Slidey". <code>LICENSE</code> keeps both upstream copyright lines plus ours.</li>
-  <li>Dropped the <code>docs</code> submodule; flattened <code>reveal-dist</code> from a submodule to a plain directory. Normalized all line endings to LF (<code>.gitattributes</code>).</li>
-  <li>Added <code>scripts/sync-reveal-assets.mjs</code> + <code>scripts/dev.mjs</code> and <code>pnpm dev:vault</code> / <code>pnpm reveal:build</code> — one-command dev loop that assembles a complete plugin folder into <code>se-test-vault/</code> (no GitHub release needed for local dev).</li>
-  <li>Reworked <code>release.yml</code> and <code>build.yml</code> for the flattened repo (no submodules); <code>codeql.yml</code> de-referenced the removed <code>reveal-dist</code> branch.</li>
-  <li>Build verified: <code>reveal-dist</code> build + 57 tests; plugin build + 138 tests / 90 snapshots; Biome clean.</li>
-  <li><strong>Smoke-tested live in Obsidian</strong> (over CDP): loads clean, renders the test deck (black theme, syntax highlighting, KaTeX, controls, progress bar), and all presentation-clicker keys — PageDown, PageUp, Space, ArrowRight/Left/Down — navigate correctly, including into and out of vertical slide stacks.</li>
-  <li>Research pass on existing markdown-to-slides tools and Obsidian slide plugins (see Claude memory <code>slidey-research-markdown-slides</code>).</li>
 </ul>
 </section>
   </div>
