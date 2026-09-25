@@ -81,6 +81,11 @@ Text beside the picture.</code></pre>
 </div>
 <p>These always win over the slide's style.</p>
 
+<h2 id="transitions">Transitions</h2>
+<p>A transition is how a slide appears when you move to it. Put one under a slide heading:</p>
+<pre><code>%% transition=zoom %%</code></pre>
+<p>Choices: <code>fade</code>, <code>slide</code>, <code>zoom</code>, <code>convex</code>, <code>concave</code>, <code>none</code>. Use two at once for in and out, like <code>transition="fade-in slide-out"</code>. For the whole deck, add <code>transition: fade</code> to the note properties, or pick one in <strong>Settings → Slidey</strong>.</p>
+
 <h2 id="fit">Text that fits</h2>
 <p>When a slide has more text than fits, like a long list or a big paragraph, Slidey makes that slide's text smaller until nothing runs off the bottom or the right edge. It never goes below half size, and slides that fit keep their normal size. PDF exports get the same result.</p>
 <p>To turn it off, go to <strong>Settings → Slidey → Shrink text to fit</strong>, or add <code>fitText: false</code> to one deck's properties. If a slide ends up very small, split it into two slides.</p>

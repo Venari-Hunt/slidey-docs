@@ -3,6 +3,21 @@
 <p class="subtitle">Every Slidey release, newest first. The 20 most recent are listed here; the full history is in the <a href="https://github.com/Venari-Hunt/slidey/blob/main/CHANGELOG.md">changelog on GitHub</a>.</p>
 
 <section class="release">
+<h2>0.23.0 — 2026-09-25</h2>
+<ul>
+  <li><strong>Rehearse with slide times.</strong> The speaker view now shows how long you have been on the current slide ("This slide 00:42"), next to the total timer. Click <strong>Slide times</strong> to swap your notes for a list of every slide and the time spent on it so far; going back to a slide adds to its time. <strong>Reset timer</strong> clears them all. Click <strong>Slide times</strong> again to see your notes.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.22.0 — 2026-09-25</h2>
+<ul>
+  <li><strong>Start a deck in one step.</strong> Run <strong>New slide deck</strong> from the command palette. Slidey makes a note called <code>Untitled deck</code> in your folder for new notes, fills it with a short example deck (a title slide, bullets, a quote, two columns) and opens the preview. To start from your own note instead, pick it in <strong>Settings → Slidey → New deck template</strong>.</li>
+  <li><strong>Pick how a slide appears.</strong> Put <code>%% transition=fade %%</code> under a slide heading (or at the top of a <code>---</code> slide). Choices: <code>fade</code>, <code>slide</code>, <code>zoom</code>, <code>convex</code>, <code>concave</code>, <code>none</code>, or two at once like <code>transition="fade-in slide-out"</code>. The <code>/</code> menu has one item for each. For the whole deck, use <code>transition:</code> in the note properties.</li>
+</ul>
+</section>
+
+<section class="release">
 <h2>0.21.1 — 2026-09-25</h2>
 <ul>
   <li>Behind the scenes: code cleanup so Slidey passes the checks Obsidian runs before listing a plugin in its directory. Nothing changes in how you use it. The sample slides in <strong>Settings → Slide styles / Slide presets</strong> still show each look's colors and fonts.</li>
@@ -140,19 +155,5 @@
 <h2>0.7.0 — 2026-09-23</h2>
 <ul>
   <li><strong>Blocks mode</strong> — put <code>slides: blocks</code> in a note's properties and keep writing a normal note. Only the parts you wrap become slides: a <code>%% slide %%</code> line starts one, <code>%% endslide %%</code> ends it (or the next <code>%% slide %%</code>, or the end of the note). <code>%% slide preset=quote %%</code> picks the preset. Everything else — research, outline, notes — stays out of the deck. Marker lines get the same colored dot and preset pill as headings. The preview follows the cursor. A note with no slides yet shows a short hint slide.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.6.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Preset pill on each heading</strong> — in <code>slides: headings</code> notes, every heading line ends with a small label naming the preset that slide will use, in the same color as its gutter dot. <code>no preset</code>, <code>name?</code> (red, dashed: preset doesn't exist) and a struck-through <code>not a slide</code> (<code>%% noslide %%</code>) cover the other cases. Editor only; reading view and the deck are unchanged.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.5.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Preset dots in the editor</strong> — in <code>slides: headings</code> notes, a colored dot sits in the gutter beside every heading, showing which preset that slide will use (hover for the name). A hollow ring = no preset, a dashed red ring = a preset name that doesn't exist, a short dash = <code>%% noslide %%</code>. Settings → Slide presets shows the same dot next to each preset as the color legend. Notes without <code>slides: headings</code> show no gutter.</li>
 </ul>
 </section>
