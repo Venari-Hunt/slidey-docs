@@ -42,9 +42,7 @@
 
 <h2 id="clicker">USB presentation clickers</h2>
 <p>Most clickers send <kbd>Page Down</kbd> / <kbd>Page Up</kbd> or the arrow keys, which Slidey understands. You don't have to click the slides first. Slidey passes these keys to the deck even when your note has focus.</p>
-<div class="callout">
-  If your clicker's “blank screen” or “laser” buttons do something odd, that's because they send other keys (often <kbd>B</kbd> or <kbd>.</kbd>). <kbd>B</kbd> blacks out the screen; press it again to come back.
-</div>
+<p>The <strong>blank screen</strong> button (it sends <kbd>.</kbd> or <kbd>B</kbd>) turns the screen black, in the preview and in the speaker view. Press it again to come back. While the screen is black, Next does nothing.</p>
 
 <h2 id="notes">Speaker notes</h2>
 <pre><code>## My slide
@@ -55,6 +53,8 @@ Only I see this, in the speaker view.</code></pre>
 <p>Everything after <code>%% notes %%</code> on that slide goes to the <a href="#speaker">speaker view</a>, not the slide. In separators mode, a line starting with <code>note:</code> works the same way.</p>
 
 <h2 id="steps">Showing things step by step</h2>
+<p><strong>Bullets one per click:</strong> add <code>stepBullets: true</code> to the note's properties and every list shows one item per click. For one slide only, put <code>%% step %%</code> at the top of that slide; <code>%% step=off %%</code> leaves one slide out. Sub-items appear with their parent.</p>
+<p><strong>Any single line:</strong></p>
 <pre><code>- First point &lt;!-- element class="fragment" --&gt;
 - Second point &lt;!-- element class="fragment" --&gt;</code></pre>
 <p>Each marked line appears on the next click. In the <a href="slide-menu.html">slide menu</a>, type <code>/step</code> at the end of a line.</p>

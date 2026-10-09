@@ -118,10 +118,17 @@ More private notes.
   <tr><td><code>%% bg=photo.jpg %%</code></td><td>A background picture or color. See <a href="pictures.html#backgrounds">backgrounds</a>.</td></tr>
   <tr><td><code>%% notes %%</code></td><td>Everything after it on this slide is speaker notes, not shown on the slide.</td></tr>
   <tr><td><code>%% color=#eee accent=red size=1.4 %%</code></td><td>One-off changes for this slide only. See <a href="looks.html#overrides">one-off changes</a>.</td></tr>
+  <tr><td><code>%% step %%</code></td><td>Lists on this slide show one item per click. See <a href="presenting.html#steps">step by step</a>.</td></tr>
+  <tr><td><code>%% focus=top %%</code></td><td>Which part of a cropped picture stays in frame. See <a href="pictures.html#focus">picture focus</a>.</td></tr>
   <tr><td><code>%% noslide %%</code></td><td>Headings mode: leave this section out.</td></tr>
 </table>
 </div>
 <p>You can combine several on one line: <code>%% layout=image-left style=paper bg=#223344 %%</code>.</p>
+
+<h2 id="callouts">Callouts</h2>
+<pre><code>&gt; [!tip] Key point
+&gt; One thing to remember.</code></pre>
+<p>Obsidian callouts show as a colored card on the slide. A callout alone on a slide is centered and larger, which makes a good “key point” slide.</p>
 
 <h2 id="dots">Dots and labels in the editor</h2>
 <p>In a slide note, each slide's first line gets a colored dot in the margin and a small label at the end, like <code>two-column · night</code>. They show which layout and style the slide will use, before you look at the preview.</p>
@@ -140,7 +147,7 @@ layout: title
 style: paper
 theme: black
 ---</code></pre>
-<p>A marker on one slide always wins over the deck setting.</p>
+<p>A marker on one slide always wins over the deck setting. <code>stepBullets: true</code> makes every list show one item per click.</p>
   </div>
 </main>
 

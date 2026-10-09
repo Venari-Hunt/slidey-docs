@@ -29,6 +29,19 @@
   <tr><td><code>%% bg=[[My photo.png]] %%</code></td><td>A vault link works too, also for names with spaces</td></tr>
 </table>
 </div>
+<h3 id="focus">Keep the right part in frame</h3>
+<p>A picture that fills the slide is cropped, and by default Slidey keeps the middle. If a face or a title sits near the edge, tell Slidey which side to keep:</p>
+<div class="table-scroll">
+<table>
+  <tr><th>Marker</th><th>Keeps in frame</th></tr>
+  <tr><td><code>%% focus=top %%</code></td><td>The top</td></tr>
+  <tr><td><code>%% focus=bot %%</code></td><td>The bottom</td></tr>
+  <tr><td><code>%% focus=left %%</code> / <code>%% focus=right %%</code></td><td>The left or right side</td></tr>
+  <tr><td><code>%% focus=left top %%</code></td><td>A corner: any side across plus top or bottom</td></tr>
+  <tr><td><code>%% focus=center %%</code></td><td>The middle (the default)</td></tr>
+</table>
+</div>
+<p>It works for a picture on the slide and for a <code>bg=</code> background. In the <a href="slide-menu.html">slide menu</a>, type <code>/focus</code>.</p>
 <h3 id="pick">Pick from a list</h3>
 <p>Type <code>bg=</code> inside a marker and a list of your vault's pictures opens, with the ones next to your note first. Keep typing to narrow it down, then press <kbd>Enter</kbd>. Slidey writes the name so it always finds that exact picture.</p>
 <p>A web address works as well: <code>%% bg=https://example.com/photo.jpg %%</code>. Type <code>/bg</code> for the <a href="slide-menu.html">slide menu</a> versions.</p>
