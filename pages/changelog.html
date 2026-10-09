@@ -3,6 +3,53 @@
 <p class="subtitle">Every Slidey release, newest first. The 20 most recent are listed here; the full history is in the <a href="https://github.com/Venari-Hunt/slidey/blob/main/CHANGELOG.md">changelog on GitHub</a>.</p>
 
 <section class="release">
+<h2>0.28.0 — 2026-10-08</h2>
+<ul>
+  <li><strong>Bullets one per click.</strong> Put <code>stepBullets: true</code> in a note's properties and every list shows one item per clicker press. For one slide only, add <code>%% step %%</code> at its top; <code>%% step=off %%</code> turns it off for one slide. Also in the <code>/</code> menu as "Bullets one per click".</li>
+  <li><strong>Picture focus.</strong> A full-slide picture is cropped from the middle. <code>%% focus=top %%</code> keeps the top in frame instead; also <code>bot</code>, <code>left</code>, <code>right</code>, <code>center</code>, or two together: <code>%% focus=left top %%</code>. Works for <code>bg=</code> backgrounds too. In the <code>/</code> menu as "Picture focus".</li>
+  <li><strong>Callouts in auto slides.</strong> A <code>&gt; [!tip]</code> callout now shows as a tinted card with a colored title, centered and larger when it's alone on a slide, instead of being laid out as a quote.</li>
+  <li><strong>Blank-screen button.</strong> Your clicker's blank button (it sends <code>.</code> or <code>b</code>) turns the screen black and back, also when Obsidian, not the slide, has the keyboard and in the two-screen speaker view.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.27.0 — 2026-10-08</h2>
+<ul>
+  <li><strong>New fonts for auto slides.</strong> Headings, one-line slides and title cards use Poppins; body text, lists and quotes use Inter. Both ship inside Slidey, so they work with nothing installed, in PDF and PowerPoint export too.</li>
+  <li><strong>Title cards are heavier and less tight:</strong> Poppins ExtraBold instead of the Avant Garde lookalike, which had no heavier weight. If you have Rustica (Adobe Fonts) installed, title cards use it instead.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.26.0 — 2026-10-08</h2>
+<ul>
+  <li><strong>Title cards.</strong> A slide with one picture and one line or short paragraph (a heading on top is fine) now fills the slide with the picture and sets the text over it in a bold Avant Garde style, tightly spaced. A lone line is shown extra large.</li>
+  <li>The font is TeX Gyre Adventor Bold, a free Avant Garde lookalike that ships inside Slidey, so it works with nothing installed, in PDF and PowerPoint export too. If you have the real ITC Avant Garde Gothic installed, Slidey uses it instead, including its special letter pairs (NT, CA, TH…). The free font doesn't have those pairs.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.25.0 — 2026-10-08</h2>
+<ul>
+  <li><strong>Controls get out of the way.</strong> The arrows, progress bar and slide number fade out 2 seconds after you stop moving the mouse, and come back when you move it. Clicker and keyboard presses don't bring them back.</li>
+  <li><strong>Present slides (fullscreen) uses your second screen.</strong> With a projector or second monitor connected, it now opens the slides fullscreen there and the speaker view on your screen (notes, current and next slide, timer, slide times). With one screen, it goes fullscreen as before.</li>
+  <li>Auto slides: headings no longer have a yellow line under them.</li>
+  <li><strong>Full-bleed image slides get a vignette:</strong> the edges of the picture darken, so the text in the middle stands out.</li>
+</ul>
+</section>
+
+<section class="release">
+<h2>0.24.0 — 2026-10-07</h2>
+<ul>
+  <li><strong>Just type, Slidey designs the slides.</strong> Write your talk as plain text and put <code>---</code> between slides. Slidey looks at each slide and picks its layout by itself:</li>
+  <li><strong>One dark theme.</strong> Every auto deck uses the same look: a near-black background, white text and a warm-yellow accent, in a 16:9 frame that fills today's screens. You don't need to choose styles or presets.</li>
+  <li>Your existing decks don't change: a note that sets <code>style</code>, <code>preset</code> or <code>layout</code> in its properties keeps its old look. A <code>%% layout=quote %%</code> line still changes one slide by hand.</li>
+  <li><strong>New slide deck</strong> now starts from a plain-text example deck.</li>
+  <li>To turn it off: <strong>Settings → Slidey → Auto slides</strong>, or <code>autoSlides: false</code> in one note's properties.</li>
+</ul>
+</section>
+
+<section class="release">
 <h2>0.23.0 — 2026-09-25</h2>
 <ul>
   <li><strong>Rehearse with slide times.</strong> The speaker view now shows how long you have been on the current slide ("This slide 00:42"), next to the total timer. Click <strong>Slide times</strong> to swap your notes for a list of every slide and the time spent on it so far; going back to a slide adds to its time. <strong>Reset timer</strong> clears them all. Click <strong>Slide times</strong> again to see your notes.</li>
@@ -118,42 +165,5 @@
 <ul>
   <li><strong>One-off changes on a single slide.</strong> Change one slide without making a new style: put <code>%% font="Open Sans" color=#eeeeee accent=red size=1.4 %%</code> at the top of a slide. <code>font</code> sets the font for headings and text, <code>color</code> the text color, <code>accent</code> the heading and link color, <code>size</code> the text size (<code>1.4</code> = 1.4 times bigger, or <code>36px</code>). These always win over the slide's style and preset. Works in all three modes and on the same line as <code>layout=</code> / <code>style=</code>.</li>
   <li>Fix: a style's or preset's text size (like the quote preset's) had no effect on the slide itself, only on the settings preview. It now really enlarges the text.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.11.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Slide layouts: where things go on a slide, apart from its look.</strong> Eight layouts ship with the plugin: <code>title</code>, <code>section</code>, <code>two-column</code>, <code>image-left</code>, <code>image-right</code>, <code>image-full</code> (picture fills the slide, text on top), <code>quote</code>, <code>code</code>. Pick one with <code>%% layout=two-column %%</code> at the top of a slide, or <code>layout: title</code> in the note's properties for the whole deck. Combine it with a style: <code>%% layout=image-left style=paper %%</code>. Layouts never change colors or fonts, so any layout works with any style.</li>
-  <li><strong>Heading levels pick a layout and a style too.</strong> Settings → Heading levels now has three dropdowns per level: layout, style and preset. New installs start with <code>#</code> → <code>title</code> layout.</li>
-  <li>Fix: a font name was put in quotes whenever it contained the letter "s", not only when it had a space. Harmless, but now correct.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.10.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Slide styles: the look of a slide, apart from its layout.</strong> A style is a set of colors and fonts: background, text color, accent color, heading font, body font, text size, alignment. Put <code>style: paper</code> in a note's properties to style the whole deck, or <code>%% style=night %%</code> at the top of one slide (headings and blocks mode too). It combines with a preset: <code>%% preset=cover style=bold %%</code> takes the preset's layout and the style's look. Five starters (night, paper, clean, bold, ocean) live in Settings → Slide styles, where you can edit them, add your own, and see a live preview of each. Fonts must be installed on your computer.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.9.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Slide markers in ordinary <code>---</code> notes.</strong> The same <code>%% … %%</code> lines that headings and blocks mode use now work in a plain note split by <code>---</code>: put them at the top of a slide, e.g. <code>%% preset=quote bg=#224466 %%</code>, to pick its preset and background. A <code>%% notes %%</code> line starts the slide's speaker notes. Markers further down a slide are left alone. First step of splitting presets into layouts and styles.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.8.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Speaker notes and slide backgrounds in headings and blocks mode.</strong> A <code>%% notes %%</code> line starts the slide's speaker notes: everything after it, up to the next slide, is shown in the speaker view (press <code>S</code>), not on the slide. <code>%% bg=photo.jpg %%</code> under a heading (or <code>%% slide bg=photo.jpg %%</code> in blocks mode) puts a picture from your vault behind the slide. <code>[[Photo name.png]]</code>, a web address, or a color like <code>#224466</code> also work. Combine with a preset: <code>%% preset=quote bg=#224466 %%</code>. In these two modes a line that happens to start with <code>note:</code> no longer starts notes by accident.</li>
-</ul>
-</section>
-
-<section class="release">
-<h2>0.7.0 — 2026-09-23</h2>
-<ul>
-  <li><strong>Blocks mode</strong> — put <code>slides: blocks</code> in a note's properties and keep writing a normal note. Only the parts you wrap become slides: a <code>%% slide %%</code> line starts one, <code>%% endslide %%</code> ends it (or the next <code>%% slide %%</code>, or the end of the note). <code>%% slide preset=quote %%</code> picks the preset. Everything else — research, outline, notes — stays out of the deck. Marker lines get the same colored dot and preset pill as headings. The preview follows the cursor. A note with no slides yet shows a short hint slide.</li>
 </ul>
 </section>
